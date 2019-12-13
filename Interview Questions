@@ -33,3 +33,59 @@ In this guide, we will cover the basic usage of this powerful utility. We will b
 
 What Is Rsync?
 Rsync is a very flexible network-enabled syncing tool. It can also refer to the network protocol developed to utilize this tool. When we reference rsync in this guide, we are mainly referring to the utility, and not the protocol.
+Troubleshooting
+A customer reports the disk is full. What do you do?
+log in, df, du, what do you look for? what do you delete in a pinch to make space?, etc
+disk error output: sda errors, ext3 journal aborted
+what do this output mean, and what would you do?
+*** Work on refining this question ****
+Scenario - you have a remote linux + postgres server in a datacenter. PostgreSQL is locked down to only allow connections from localhost. You need to connect to it with the pgAdmin GUI tool running locally on your laptop. How do you get connected?
+Networking
+Imagine I've logged you on to a machine here and brought up a terminal. You type wget http://www.google.com/. Describe all the things that happen.
+DNS resolution, moving on to proxy configuration, and then on to the routing decision and establishment of a TCP connection; another candidate answered in terms of the HTTP conversation.
+Draw me some simple network diagrams:
+Scenario #1 – You have1 firewall, 1 L3 switch, 1 L2 switch, 2 servers, 10 workstations
+Scenario #2 – You have 20 systems, 1 router, 5 switches, 2 servers, and a small IP block.
+Draw a diagram on the whiteboard of a network you've worked on and explain it.
+You've got nothing but a laptop that's been assigned a DHCP address and no other special privileges. What are the steps you would take to discover the network topology?
+Now, this is a loaded question. Practically speaking, there is a limited amount of network that can be discovered if it’s even vaguely secure, but an engineer that’s been around the block will come up with hopefully several of the following answers. Running a ping sweep against a range of addresses. Running a packet analyzer and seeing what sorts of broadcast frames come across the wire. Running a MAC flooding tool to get the switch to dump all traffic to their port through unicast flooding, and seeing what they can pick up from that. Running traceroute to Internet addresses and then scanning each hop that reports back. Seeing if the DNS server will let them do a zone transfer. Running a SNMP scanner, looking for open systems. Walking around the building and plugging into as many ports as they can find. Setting up a route daemon on their local system and see if they can form an adjacency with something on the local segment. Searching the local RIR database looking for tell-tale records.
+
+The idea with a question like this is to answer the question yourself ahead of time on a sheet of paper, then see what the candidate comes up with that lines up. Then, as they make their suggestions, you can probe them. Oh, so you’d try to get a DNS zone transfer. And if you succeeded, how would that information help you? Ah, so you’d look for broadcast traffic with Wireshark. What sort of broadcasts would you find useful? As the candidate explains their answers, you learn about their knowledge, but you also learn how they think. Is the candidate clever? Resourceful? Independent? Determined? Logical? Or is their only answer that they’d go up to your desk and ask you for a network map (see the next question below)? What happens if you point out a critical flaw in their logic? Do they get defensive? Angry? Or do they see the error they made and move on?
+ 
+
+Describe to me, as if I knew nothing, how a TCP/IP network works.
+Describe what's going on given some sample tcpdump outputs:
+Bad things like Connection refused
+Successful handshaking (SYN, SYN/ACK, ACK) and teardown (FIN, ACK, FIN, ACK)
+Basic successful conversation
+3DES vs AES - Which would you prefer for use with a VPN and why?
+What is a VLAN?
+Describe what a stateful firewall is.
+What is HSRP? Is this an open standard?
+In a Cisco ASA, what are security levels used for?
+What two things are needed in a ASA firewall to allow traffic to pass from a higher security level to a lower security level.
+Explain what is an Ether-Channel and/or LACP?
+What is your favorite routing protocol?
+What is your home network like?
+What is the difference between TCP and UDP?
+What is a TCP three-way handshake? SYN, SYN-ACK, ACK?
+What is a gateway?
+What is a class C subnet? What is a class B? How do you denote class C + B in CIDR notation, and netmask notation?
+What are the differences among a router, switch, bridge, and hub?
+What is ARP and what is it used for?
+Application deployment
+what are some basic things to think about when running a [Java] application in production?
+"given a requirement of 3/4 9s?"
+monitoring, backups, load balancing/failover, java heap/permgen sizes, auto restarting the apps
+What is garbage collection in Java? and why do you have to deal with it?
+Databases
+Write some basic SQL: SELECT some fields with a WHERE clause
+Query tuning: EXPLAIN PLAN
+System performance tuning topics: buffer cache, db writers, log writers
+Troubleshooting: look at system resources (cpu, memory, io)
+optional: Design a schema for a school: hospital, people (patients, staff, etc), can they normalize?
+Storage
+how do you troubleshoot io performance?
+tell me the difference between RAID 0, RAID 1, RAID 5, RAID 1+0, and RAID 0+1.
+"which is better" and why, raid10 or raid01?
+what is a NAS? what is a SAN?
