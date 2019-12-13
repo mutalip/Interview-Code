@@ -1,0 +1,30 @@
+Scripting
+1. Write a basic shell script
+In the current directory, for each file, report how many lines contain the word "aaa"
+
+Answer : grep -roh aaa . | wc -w
+
+2. optional, for stronger programmers: FizzBuzz
+Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+
+Linux
+1.what are your favorite distros and why?
+2. What are some ways to check the performance/load on a system? 
+top, lsof, free -m, uptime, w, vmstat, iostat, procinfo 
+3. describe what happens on system boot
+ the kernel boots, drivers are loaded off initrd/initramfs, init runs, and the startup scripts in /etc/init.d are run
+
+4.how do you boot single user?
+  machine, once boot process starts, wait for the GRUB boot menu, change the mode 
+  
+5. What's the difference between rysnc -a /foo /bar and rsync -a /foo/ /bar
+
+
+Introduction
+Rsync, which stands for “remote sync”, is a remote and local file synchronization tool. It uses an algorithm that minimizes the amount of data copied by only moving the portions of files that have changed.
+
+In this guide, we will cover the basic usage of this powerful utility. We will be using an Ubuntu 12.04 VPS in the examples, but you can use any modern Linux distribution to follow along.
+
+What Is Rsync?
+Rsync is a very flexible network-enabled syncing tool. It can also refer to the network protocol developed to utilize this tool. When we reference rsync in this guide, we are mainly referring to the utility, and not the protocol.
