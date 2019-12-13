@@ -3,7 +3,12 @@ Scripting
 In the current directory, for each file, report how many lines contain the word "aaa"
 
 Answer : grep -roh aaa . | wc -w
+If you only want the number of lines, simply do:
 
+wc -l myfile
+Using AWK to count the lines in a file
+
+awk 'END {print NR}' filename
 2. optional, for stronger programmers: FizzBuzz
 Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
